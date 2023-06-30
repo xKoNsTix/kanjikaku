@@ -2,7 +2,7 @@
 
 $statements = [
     'CREATE TABLE IF NOT EXISTS public.users (
-        id integer NOT NULL,
+        id serial PRIMARY KEY,
         username character varying(12) NOT NULL,
         password character varying(80) NOT NULL,
         email character varying(40) NOT NULL,
