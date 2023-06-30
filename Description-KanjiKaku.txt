@@ -1,0 +1,32 @@
+Kanji Kaku ist ein Tool, dass einem dabei helfen soll in der japanischen Sprache standfester zu werden. 
+Der Fokus liegt hauptsächlich auf dem Schreiben der Schriftzeichen. Ich habe es mir so vorgestellt, dass dies wie ein Karteikarten-
+System funktioniert: Man sieht den Namen bzw. die Bedeutung des Schriftzeichens und hat idealerweise darunter einen Space, in dem man das Schriftzeichen selber mit der Maus zeichnen kann. Anschließen kann man die Karte "umdrehen"
+um zu überprüfen, ob man es richtig gezeichnet hat. 
+
+Es gibt unterschiedliche Kategorien, nach denen man üben kann. Beispielsweise kann man nach Schulstufen oder Häufigkeit gehen.
+Wenn zum Beispiel das Zeichnen nicht gut geklappt hat, kann man direkt auf einen "Nochmal" Button klicken. Dieses wird dann in die "unbedingt nochmal wiederholen" Kategorie eingeordnet.
+Man soll zudem selbst Kategorien zusammenstellen können, um alles an die Individuellen Bedürfnisse anzupassen.
+
+Die Schriftzeichen sollen mithilfe einer API abgefragt werden, damit man nicht alle selber einfügen muss.
+Wenn es sich ausgeht, wäre es cool einen Kalender zu haben, in dem man seinen Lernplan eintragen kann.
+ 
+Für das Ganze wäre es ideal, dass die Abfragen im spaced-repetion-intervall Stil abgefragt werden, um die idealen Wiederholungszeitpunkte zu nutzen und eine 'Aufforderung' hat zu üben. Allerdings kann ich mir gut vorstellen, dass
+das den Rahmen sprengen würde.
+
+Ein Login-System muss natürlich auch vorhanden sein.
+
+
+Für das Projekt muss ich sowohl die Datenbank als auch eine API (keine bisherige Erfahrung damit) miteinbeziehen. Auch die Logik hinter den Features dürfte eine ordentliche Challenge darstellen.
+Ein Login-System ist meiner Meinung nach auch immer eine gute Übung und Herausforderung es ordentlich zu machen.
+Außerdem liegt ein großes persönliches Interesse dahinter, da die Idee der Anwendung durch eigene Bedürfnisse entstanden ist.
+Sie ist zudem auch sehr gut ausbaubar.
+
+
+- Kanji schreiben üben
+- Kanji Bedeutung erkennen
+- Vokabeln lernen
+- Hiragana lernen
+- Katakana lernen
+
+
+

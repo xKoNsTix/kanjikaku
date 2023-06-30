@@ -1,0 +1,19 @@
+/* This website was created as MultiMediaProject 1 for MultiMediaTechnology at the Salzburg University of Applied Sciences.
+Author: Jennifer Scharinger
+Illustration: by pikisuperstar - www.freepik.com */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 text-gray-600 min-h-screen flex flex-col;
+}
+
+.class {
+  @apply text-white;
+}
+
+.active {
+  @apply border-brand-500/50 text-brand-500;
+}
