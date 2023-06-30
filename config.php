@@ -13,3 +13,4 @@ try {
     echo 'Failed to establish a connection: ' . $exception->getMessage();
 }
 ?>
+<!-- # -->
