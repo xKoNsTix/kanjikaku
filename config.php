@@ -1,16 +1,37 @@
-
 <?php
-$databaseName = getenv('DB_NAME');
-$databaseUser = getenv('DB_USER');
-$databasePassword = getenv('DB_PASS');
-$databaseHost = getenv('DB_HOST');
 
-$connectionString = "pgsql:dbname=$databaseName;host=$databaseHost";
-try {
-    $database = new PDO($connectionString, $databaseUser, $databasePassword);
-    $currentDirectory = getcwd();
-} catch (PDOException $exception) {
-    echo 'Failed to establish a connection: ' . $exception->getMessage();
+$url = getenv("DATABASE_URL");
+
+function parse(string $url): array
+{
+    $params = [];
+    $regex = "/(.+):\/\/(.+):(.+)@(.+):(\d+)\/(.*)/";
+    preg_match($regex, $url, $matches);
+
+    if ($matches[1] == "postgres") {
+        $params["scheme"] = "pgsql";
+    }
+
+    $params["user"] = $matches[2];
+    $params["password"] = $matches[3];
+    $params["host"] = $matches[4];
+    $params["port"] = $matches[5];
+    $params["database"] = $matches[6];
+
+    return $params;
 }
-?>
-<!-- # -->
+
+function generateDSN(array $params): string
+{
+    return $params["scheme"] . ":host=" . $params["host"] . ";port=" . $params["port"] . ";dbname=" . $params["database"];
+}
+
+try {
+    $params = parse($url);
+    $dsn = generateDSN($params);
+    $pdo = new PDO($dsn, $params["user"], $params["password"], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+    $currentDir = getcwd();
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
