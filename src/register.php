@@ -83,7 +83,7 @@ Illustration: by pikisuperstar - www.freepik.com -->
         if (!$issue) {
 
           $vkey = generateKey($username);
-          echo $vkey;
+          //echo $vkey;
 
           $sth = $dbh->prepare("INSERT INTO users (username, password, email, vkey) VALUES (?, ?, ?, ?)");
           $sth->execute(
