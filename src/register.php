@@ -7,7 +7,7 @@ Illustration: by pikisuperstar - www.freepik.com -->
  // if ( ! $DB_NAME ) die ('please create config.php, define $DB_NAME, $DSN, $DB_USER, $DB_PASS there. See config_sample.php');
 
   try {
-      $dbh = new PDO($DSN, $DB_USER, $DB_PASS);
+      $dbh = new PDO($dsn, $params["user"], $params["password"], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
       $dbh->setAttribute(PDO::ATTR_ERRMODE,            PDO::ERRMODE_EXCEPTION);
       $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
