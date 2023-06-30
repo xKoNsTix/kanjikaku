@@ -4,7 +4,7 @@ Illustration: by pikisuperstar - www.freepik.com -->
 
 <?php
   require "../config.php";
-  if ( ! $DB_NAME ) die ('please create config.php, define $DB_NAME, $DSN, $DB_USER, $DB_PASS there. See config_sample.php');
+ // if ( ! $DB_NAME ) die ('please create config.php, define $DB_NAME, $DSN, $DB_USER, $DB_PASS there. See config_sample.php');
 
   try {
       $dbh = new PDO($DSN, $DB_USER, $DB_PASS);
@@ -33,7 +33,7 @@ Illustration: by pikisuperstar - www.freepik.com -->
                     <a href='https://users.multimediatechnology.at/~fhs47772/mmp1/src/verify.php?vkey=$vkey'>Verify your Account</a>
                     end;
         $headers = "From: jennyxscharinger@gmail.com" . "\r\n";
-        $headers .= "MIME-Version: 1.0" . "\r\n"; 
+        $headers .= "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
@@ -57,17 +57,17 @@ Illustration: by pikisuperstar - www.freepik.com -->
         if (strlen($username) < 3 || strlen($username) > 12) {
           $feedback = "Your username must be ast least between 3 and 12 characters long.";
           $issue = true;
-        } 
+        }
 
         if (strlen($password) < 8) {
           $feedback = "Your password must be at least 8 characters long.";
           $issue = true;
         }
-        
+
         if ($password != $password2) {
           $feedback = "Passwords do not match.";
           $issue = true;
-        } 
+        }
 
         if (!$issue) {
           $sth = $dbh->prepare("SELECT * FROM users WHERE username=?");
@@ -77,11 +77,11 @@ Illustration: by pikisuperstar - www.freepik.com -->
           if ($user) {
             $feedback = "That username has already been taken";
             $issue = true;
-          } 
+          }
         }
 
         if (!$issue) {
-          
+
           $vkey = generateKey($username);
           echo $vkey;
 
@@ -147,7 +147,7 @@ Illustration: by pikisuperstar - www.freepik.com -->
               </div>
               <input type="submit" name="submit" value="Create Account" class="bg-brand-500 hover:bg-brand-600 cursor-pointer text-white text-lg font-semibold rounded-lg h-12 col-span-2"></input>
             </form>
-            
+
           </div>
         </div>
       <div class="col-span-1 hidden lg:block mb-12 rounded-2xl bg-login-illustration bg-cover bg-no-repeat"></div>
