@@ -1,10 +1,10 @@
 <!-- This website was created as MultiMediaProject 1 for MultiMediaTechnology at the Salzburg University of Applied Sciences.
 Author: Jennifer Scharinger
-Illustration: by pikisuperstar - www.freepik.com -->
+Illustration: by pikisuperstar - www.freepik.com    -->
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
   require "../config.php";
  // if ( ! $DB_NAME ) die ('please create config.php, define $DB_NAME, $DSN, $DB_USER, $DB_PASS there. See config_sample.php');
 
